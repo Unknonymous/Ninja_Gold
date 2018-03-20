@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <link rel='stylesheet' href="C:\Users\user\Documents\CodingDojo\Django\Holder7\ninja\apps\gold\static\gold\css\styles.css" > -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'gold/css/styles.css' %}" >
+    <title>Ninja Money</title>
+</head>
+<body>
+    <div id='wrapper'>
+
+        <!-- track running total -->
+        <h3>Your Gold: </h3>
+        <div id='account'>
+            <p>{{ request.session.total }}</p>
+        </div><br>
+
+        <!-- building types -->
+        <center>
+            <div class="building">
+                <center>
+                    <h3>Farm</h3>
+                    <h4>(earns 10-20 golds)</h4>
+                    <form action="/process_money" method="POST">
+                        {% csrf_token %}
+                        <input type='hidden' name='building' value='farm'>
+                        <input type='submit' value="Find Gold!" class='bttn' >
+                    </form>
+                </center>
+            </div>
+            <div class="building">
+                <center>
+                    <h3>Cave</h3>
+                    <h4>(earns 5-10 golds)</h4>
+                    <form action="/process_money" method="POST">
+                        {% csrf_token %}
+                        <input type='hidden' name='building' value='cave'>
+                        <input type='submit' value="Find Gold!" class='bttn' >
+                    </form>
+                </center>
+            </div>
+            <div class="building">
+                <center>
+                    <h3>House</h3>
+                    <h4>(earns 2-5 golds)</h4>
+                    <form action="/process_money" method="POST">
+                        {% csrf_token %}
+                        <input type='hidden' name='building' value='house'>
+                        <input type='submit' value="Find Gold!" class='bttn' >
+                    </form>
+                </center>
+            </div>
+            <div class="building">
+                <center>
+                    <h3>Casino</h3>
+                    <h4>(earns/loses 0-50 golds)</h4>
+                    <form action="/process_money" method="POST">
+                        {% csrf_token %}
+                        <input type='hidden' name='building' value='casino'>
+                        <input type='submit' value="Find Gold!" class='bttn' >
+                    </form>
+                </center>
+            </div>
+        </center>
+        <p id="actLabel">Activities:</p>
+        <div id="activities">
+            <!-- scrollable log of activities selected -->
+            {% for event in request.session.log %}
+                <p class={{event.class}}>{{ event.event }}</p>                   
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

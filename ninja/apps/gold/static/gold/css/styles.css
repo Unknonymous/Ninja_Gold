@@ -1,0 +1,66 @@
+*{
+    background-color: none;
+    margin: 0px;
+    padding: 0px;
+    /* border: solid 1px red; */
+}
+body{
+    background-color: darkblue;
+    color: white;
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#wrapper{
+    background: linear-gradient(red, black);
+    width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border-radius: 5px;
+    padding-bottom: 30px;
+}
+h3, h4{
+    padding: 10px 10px 10px 20px;
+    display: inline-block;
+    margin-top: 15px;
+}
+#account{
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+}
+.building{
+    height: 200px;
+    width: 200px;
+    margin: 5px;
+    display: inline-block;
+}
+.bttn{
+    padding: 5px 10px 5px 10px;
+    font-weight: bold;
+    border: solid 1px black;
+    box-shadow: 5px 5px black;
+    background-color: inherit;
+    color: white;
+    border-radius: 5px;
+    margin: 30px;
+}
+#actLabel{
+    margin-top: 30px;
+    margin-left: 43px;
+}
+#activities{
+    width: 90%;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: auto;
+}
+.earn{
+    color: limegreen;
+    font-weight: bold;
+}
+.loss{
+    color: red;
+    font-weight: bold;
+}
